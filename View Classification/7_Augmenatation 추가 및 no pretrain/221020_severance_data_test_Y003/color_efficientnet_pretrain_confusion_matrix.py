@@ -46,7 +46,7 @@ def main(args):
     print('----------------------')
     ### Train, test ###
 
-    root_path = "/mnt/NAS01/Jayoung/femoral_artery/data2/View_Classification/Final_Data/Severance_Data/Test_Data/Y003_bmode/"
+    root_path = "/mnt/NAS01/Jayoung/femoral_artery/data2/View_Classification/Final_Data/Severance_Data/Test_Data/Y003_color/"
     all_paths = [ root_path + class_fol +'/'+ path for class_fol in os.listdir(root_path) for path in os.listdir(root_path + class_fol) if 'png' in path ] 
     # print(all_paths[0])
 
@@ -198,14 +198,14 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu_num', type=str, default="4", help="GPU number configuration")
+    parser.add_argument('--gpu_num', type=str, default="6", help="GPU number configuration")
     parser.add_argument('--batch_size', type=int, default=128, help="GPU number configuration")
 
     parser.add_argument('--Learning_rate', type=float, default="0.001", help="GPU number configuration")
     parser.add_argument('--Epoch', type=int, default=200, help="GPU number configuration")
 
     # parser.add_argument('--Save_Path', type=str, default="/home/hankh/Works/Project/Vascular_Ultrasound/JY/Codes/220919_view_classification/bmode/experiment/model/", help="GPU number configuration")
-    parser.add_argument('--Save_Path', type=str, default="/mnt/NAS01/Jayoung/femoral_artery/data2/View_Classification/Model_Save/efficientnet_pretrain/mismatched_data_and_confusion_matrix/severance_data_Y003/", help="GPU number configuration")
+    parser.add_argument('--Save_Path', type=str, default="/mnt/NAS01/Jayoung/femoral_artery/data2/View_Classification/Model_Save/color_efficientnet_pretrain/mismatched_data_and_confusion_matrix/severance_data_Y003/", help="GPU number configuration")
 
     
     args = parser.parse_args()
